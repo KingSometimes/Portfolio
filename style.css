@@ -96,8 +96,11 @@ h1 {
 .projetos,
 .contato {
   padding: 6rem 4rem;
+  
 }
-
+.projetos, .contato{
+  min-height: 100vh;
+}
 .sobre-titulo {
   font-size: 1.8rem;
   color: var(--claro);
