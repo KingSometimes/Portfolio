@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+      <ul class="menu">
+        <li><a href="#inicio" class="menu-link">Início</a></li>
+        <li><a href="#sobre" class="menu-link">Sobre</a></li>
+        <li><a href="#projetos" class="menu-link">Projetos</a></li>
+        <li><a href="#contato" class="menu-link">Contato</a></li>
+      </ul>
+    </nav>
+
+    <main id="inicio" class="inicio">
+      <img src="/img/perfil.jpg" alt="perfil" class="foto-perfil" />
+      <h1>Ramon Barros</h1>
+      <p class="texto-inicio">Desenvolvedor Full-Stack.</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+      <h2 class="sobre-titulo">Sobre Mim</h2>
+      <div class="sobre-container">
+        <p class="sobre-texto">
+          Sou um desenvolvedor apaixonado por criar soluções inovadoras e
+          eficientes. Com experiência em diversas tecnologias, busco sempre
+          aprender e me aprimorar.
+        </p>
+      </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+      <h2 class="projetos-titulo">Meus Projetos</h2>
+      <div class="projeto-container">
+        <div class="projeto-card">
+          <img src="/img/1.webp" alt="card1" class="card" />
+          <div class="card-conteudo">
+            <h3 class="card-titulo">loja</h3>
+            <p class="card-descricao">
+              Descrição do projeto 1. Um projeto incrível que resolve problemas
+              complexos de forma simples.
+            </p>
+          </div>
+        </div>
+
+        <div class="projeto-card">
+          <img src="/img/2.webp" alt="card2" class="card" />
+          <div class="card-conteudo">
+            <h3 class="card-titulo">loja2</h3>
+            <p class="card-descricao">
+              Descrição do projeto 2. Um projeto incrível que resolve problemas
+              complexos de forma simples.
+            </p>
+          </div>
+        </div>
+        <div class="projeto-card">
+          <img src="/img/3.webp" alt="card3" class="card" />
+          <div class="card-conteudo">
+            <h3 class="card-titulo">loja3</h3>
+            <p class="card-descricao">
+              Descrição do projeto 3. Um projeto incrível que resolve problemas
+              complexos de forma simples.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="contato">
+      <h2 class="contato-titulo">Entre em Contato</h2>
+      <form class="contato-formulario" onsubmit="enviarMensagem(event)">
+        <div>
+          <input
+            id="nome"
+            type="text"
+            placeholder="Seu Nome"
+            class="contato-input"
+            required
+          />
+        </div>
+        <div>
+          <textarea
+            id="mensagem"
+            rows="7"
+            placeholder="Digite sua mensagem"
+            class="contato-input"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="contato-botao">Enviar WatsApp</button>
+      </form>
+    </section>
+
+    <script>
+      function enviarMensagem(event) {
+        event.preventDefault();
+        const nome = document.getElementById("nome").value;
+        const mensagem = document.getElementById("mensagem").value;
+        const telefone = "5531996208396";
+        const texto = `Olá, me chamo ${nome}, ${mensagem}`;
+        const msgFormatada = encodeURIComponent(texto);
+        const url = `https://api.whatsapp.com/send?phone=${telefone}&text=${msgFormatada}`;
+
+        window.open(url, "_blank");
+      }
+    </script>
+  </body>
+</html>
